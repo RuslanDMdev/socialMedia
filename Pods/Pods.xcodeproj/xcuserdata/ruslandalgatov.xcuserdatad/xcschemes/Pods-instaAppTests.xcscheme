@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "777B14E5FC5967A7835723925AD8EE94"
-               BuildableName = "Pods-instaApp.framework"
-               BlueprintName = "Pods-instaApp"
+               BlueprintIdentifier = "4C567F100739B5D25D52D865CD0A032F"
+               BuildableName = "Pods_instaAppTests.framework"
+               BlueprintName = "Pods-instaAppTests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
