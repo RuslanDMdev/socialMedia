@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C6BBC2F2977EF30005153F3 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC2E2977EF30005153F3 /* FeedViewController.swift */; };
 		0CE29CB2297404EE005D7047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE29CB1297404EE005D7047 /* AppDelegate.swift */; };
 		0CE29CB4297404EE005D7047 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE29CB3297404EE005D7047 /* SceneDelegate.swift */; };
-		0CE29CB6297404EE005D7047 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE29CB5297404EE005D7047 /* ViewController.swift */; };
-		0CE29CB9297404EE005D7047 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE29CB7297404EE005D7047 /* Main.storyboard */; };
 		0CE29CBB297404F0005D7047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE29CBA297404F0005D7047 /* Assets.xcassets */; };
 		0CE29CBE297404F0005D7047 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE29CBC297404F0005D7047 /* LaunchScreen.storyboard */; };
 		0CE29CC9297404F0005D7047 /* instaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE29CC8297404F0005D7047 /* instaAppTests.swift */; };
@@ -39,11 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C6BBC2E2977EF30005153F3 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0CE29CAE297404EE005D7047 /* instaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE29CB1297404EE005D7047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CE29CB3297404EE005D7047 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0CE29CB5297404EE005D7047 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0CE29CB8297404EE005D7047 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CE29CBA297404F0005D7047 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CE29CBD297404F0005D7047 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CE29CBF297404F0005D7047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +89,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C6BBC2B2977EE03005153F3 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				0CE29CB1297404EE005D7047 /* AppDelegate.swift */,
+				0CE29CB3297404EE005D7047 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		0C6BBC2C2977EE09005153F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0CE29CBA297404F0005D7047 /* Assets.xcassets */,
+				0CE29CBC297404F0005D7047 /* LaunchScreen.storyboard */,
+				0CE29CBF297404F0005D7047 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0C6BBC2D2977EEEC005153F3 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0C6BBC2E2977EF30005153F3 /* FeedViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		0CE29CA5297404EE005D7047 = {
 			isa = PBXGroup;
 			children = (
@@ -116,13 +141,9 @@
 		0CE29CB0297404EE005D7047 /* instaApp */ = {
 			isa = PBXGroup;
 			children = (
-				0CE29CB1297404EE005D7047 /* AppDelegate.swift */,
-				0CE29CB3297404EE005D7047 /* SceneDelegate.swift */,
-				0CE29CB5297404EE005D7047 /* ViewController.swift */,
-				0CE29CB7297404EE005D7047 /* Main.storyboard */,
-				0CE29CBA297404F0005D7047 /* Assets.xcassets */,
-				0CE29CBC297404F0005D7047 /* LaunchScreen.storyboard */,
-				0CE29CBF297404F0005D7047 /* Info.plist */,
+				0C6BBC2B2977EE03005153F3 /* Application */,
+				0C6BBC2D2977EEEC005153F3 /* Feed */,
+				0C6BBC2C2977EE09005153F3 /* Resources */,
 			);
 			path = instaApp;
 			sourceTree = "<group>";
@@ -164,7 +185,6 @@
 				F54A2ED96787CDEA8D00816E /* Pods-instaAppTests.debug.xcconfig */,
 				D9A8E528262160FCE27A4C05 /* Pods-instaAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -279,7 +299,6 @@
 			files = (
 				0CE29CBE297404F0005D7047 /* LaunchScreen.storyboard in Resources */,
 				0CE29CBB297404F0005D7047 /* Assets.xcassets in Resources */,
-				0CE29CB9297404EE005D7047 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,8 +426,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CE29CB6297404EE005D7047 /* ViewController.swift in Sources */,
 				0CE29CB2297404EE005D7047 /* AppDelegate.swift in Sources */,
+				0C6BBC2F2977EF30005153F3 /* FeedViewController.swift in Sources */,
 				0CE29CB4297404EE005D7047 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,14 +465,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0CE29CB7297404EE005D7047 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0CE29CB8297404EE005D7047 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0CE29CBC297404F0005D7047 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -589,10 +600,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KHYY32KSS7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = instaApp/Info.plist;
+				INFOPLIST_FILE = instaApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -618,10 +629,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KHYY32KSS7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = instaApp/Info.plist;
+				INFOPLIST_FILE = instaApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
