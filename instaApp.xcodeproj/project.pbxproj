@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C6BBC2F2977EF30005153F3 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC2E2977EF30005153F3 /* FeedViewController.swift */; };
+		0C6BBC3229801602005153F3 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC3129801602005153F3 /* LogoView.swift */; };
 		0CE29CB2297404EE005D7047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE29CB1297404EE005D7047 /* AppDelegate.swift */; };
 		0CE29CB4297404EE005D7047 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE29CB3297404EE005D7047 /* SceneDelegate.swift */; };
 		0CE29CBB297404F0005D7047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE29CBA297404F0005D7047 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		0C6BBC2E2977EF30005153F3 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		0C6BBC3129801602005153F3 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		0CE29CAE297404EE005D7047 /* instaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE29CB1297404EE005D7047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CE29CB3297404EE005D7047 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 			path = Feed;
 			sourceTree = "<group>";
 		};
+		0C6BBC30298015DA005153F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C6BBC3129801602005153F3 /* LogoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0CE29CA5297404EE005D7047 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 			children = (
 				0C6BBC2B2977EE03005153F3 /* Application */,
 				0C6BBC2D2977EEEC005153F3 /* Feed */,
+				0C6BBC30298015DA005153F3 /* Views */,
 				0C6BBC2C2977EE09005153F3 /* Resources */,
 			);
 			path = instaApp;
@@ -427,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CE29CB2297404EE005D7047 /* AppDelegate.swift in Sources */,
+				0C6BBC3229801602005153F3 /* LogoView.swift in Sources */,
 				0C6BBC2F2977EF30005153F3 /* FeedViewController.swift in Sources */,
 				0CE29CB4297404EE005D7047 /* SceneDelegate.swift in Sources */,
 			);
