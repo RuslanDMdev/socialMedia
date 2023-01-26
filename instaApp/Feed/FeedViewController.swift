@@ -17,6 +17,29 @@ class FeedViewController: UIViewController {
         initialize ()
 
     }
+    
+    // MARK: - Feed properties
+
+    private let tableView = UITableView()
+    private var items: [FeedItemType] = [
+        .stories([
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: true, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: true),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: true),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: true),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false)
+
+            
+            ])
+        
+    ]
+    
+    
 }
 
 
@@ -28,6 +51,13 @@ private extension FeedViewController {
         navigationController?.navigationBar.tintColor = .black
         navigationItem.rightBarButtonItems = makeRightBarButtonItems()
         navigationItem.leftBarButtonItems = makeLeftBarButtonItems()
+        view.addSubview(tableView)
+        tableView.register(FeedStoriesSetSell.self, forCellReuseIdentifier: String(describing: FeedStoriesSetSell.self))
+        tableView.register(FeedPostCell.self, forCellReuseIdentifier: String(describing: FeedPostCell.self))
+        tableView.dataSource = self
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     func makeRightBarButtonItems() -> [UIBarButtonItem]{
@@ -58,5 +88,29 @@ private extension FeedViewController {
             print("Faforite")
         }
         return UIMenu(title: "", children: [subItem, favsItem])
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension FeedViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        items.count
+    }
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = items[indexPath.row]
+        switch item {
+        case .stories(let info):
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FeedStoriesSetSell.self), for: indexPath) as! FeedStoriesSetSell; cell.configure(with: info)
+            return cell
+            
+            
+        case .post(let post):
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FeedPostCell.self), for: indexPath) as! FeedPostCell; cell.configure(with: post)
+            return cell
+            
+        }
     }
 }
