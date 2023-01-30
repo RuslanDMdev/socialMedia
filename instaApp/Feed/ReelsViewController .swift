@@ -1,0 +1,116 @@
+//
+//  ReelsViewController .swift
+//  instaApp
+//
+//  Created by Ruslan Dalgatov on 30.01.2023.
+//
+
+import SnapKit
+import UIKit
+
+class ReelsViewController : UIViewController {
+
+    //MARK: - View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initialize ()
+
+    }
+    
+    // MARK: - Feed properties
+
+    private let tableView = UITableView()
+    private var items: [FeedItemType] = [
+        .stories([
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: true, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: true),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: true),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: true),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "@hasbulla_hushet", isAddButtonVisible: false, isNewStory: false)
+
+            
+            ])
+        
+    ]
+    
+    
+}
+
+
+// MARK: - Private methods
+
+private extension ReelsViewController  {
+    func initialize(){
+        view.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .black
+        navigationItem.rightBarButtonItems = makeRightBarButtonItems()
+        navigationItem.leftBarButtonItems = makeLeftBarButtonItems()
+        view.addSubview(tableView)
+        tableView.register(FeedStoriesSetSell.self, forCellReuseIdentifier: String(describing: FeedStoriesSetSell.self))
+        tableView.register(FeedPostCell.self, forCellReuseIdentifier: String(describing: FeedPostCell.self))
+        tableView.dataSource = self
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    func makeRightBarButtonItems() -> [UIBarButtonItem]{
+        let addBarButtunItem = UIBarButtonItem(title: "nil", image: UIImage(systemName: "plus"), target: self, action: #selector(didTapPlusButton))
+        let directBarButtunItem = UIBarButtonItem(title: "nil", image: UIImage(systemName: "paperplane"), target: self, action: #selector(didTapDirectButton))
+        return[directBarButtunItem, addBarButtunItem]
+    }
+    
+    @objc func didTapPlusButton(){
+        print("Add button tapped")
+    }
+    
+    @objc func didTapDirectButton(){
+        print("Direct button tapped")
+    }
+    
+    func makeLeftBarButtonItems() -> [UIBarButtonItem] {
+        let logoBarButtunItem = UIBarButtonItem(customView: LogoView())
+        let dropDownButtomItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "chevron.down"), target: self, action: nil, menu: makeDrowDownMenu())
+    return [logoBarButtunItem, dropDownButtomItem]
+    }
+    
+    func makeDrowDownMenu() -> UIMenu{
+        let subItem = UIAction(title: "Подписки", image: UIImage(systemName: "person.2")) { _ in
+            print("Subs")
+        }
+        let favsItem = UIAction(title: "Избранное", image: UIImage(systemName: "star")) { _ in
+            print("Faforite")
+        }
+        return UIMenu(title: "", children: [subItem, favsItem])
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension ReelsViewController : UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        items.count
+    }
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = items[indexPath.row]
+        switch item {
+        case .stories(let info):
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FeedStoriesSetSell.self), for: indexPath) as! FeedStoriesSetSell; cell.configure(with: info)
+            return cell
+            
+            
+        case .post(let post):
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FeedPostCell.self), for: indexPath) as! FeedPostCell; cell.configure(with: post)
+            return cell
+            
+        }
+    }
+}
