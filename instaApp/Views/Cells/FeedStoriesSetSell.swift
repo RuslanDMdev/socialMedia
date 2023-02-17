@@ -13,6 +13,7 @@ class FeedStoriesSetSell: UITableViewCell {
     func configure(with info: FeedStoriesCellInfo){
         self.items = info
         collectionView.reloadData()
+//        print(info)
     }
     
     //MARK: - Init
@@ -25,6 +26,14 @@ class FeedStoriesSetSell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    //MARK: - Private constants
+    
+    private enum UIConstants{
+        static let collectionViewHeight: CGFloat = 106
+        static let cellWidht: CGFloat = 72
+        static let cellHeiht: CGFloat = 98
+    }
+    
     //MARK: - private properties
     
     private var collectionView: UICollectionView!
@@ -37,9 +46,17 @@ class FeedStoriesSetSell: UITableViewCell {
 private extension FeedStoriesSetSell{
     func initialize(){
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(StoriesItemCell.self, forCellWithReuseIdentifier: String(describing: StoriesItemCell.self))
         collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.showsHorizontalScrollIndicator = false
+        contentView.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.height.equalTo(UIConstants.collectionViewHeight)
+        }
     }
     
 }
@@ -54,5 +71,11 @@ extension FeedStoriesSetSell: UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: StoriesItemCell.self), for: indexPath) as! StoriesItemCell
         cell.configure(with: items[indexPath.item])
         return cell
+    }
+}
+//MARK: - UICollectionViewDelegateFlowLayout
+extension FeedStoriesSetSell: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: UIConstants.cellWidht, height: UIConstants.cellHeiht)
     }
 }
