@@ -33,10 +33,10 @@ class FeedViewController: UIViewController {
             FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
             FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "hasbulla_hushet", isAddButtonVisible: false, isNewStory: true),
             FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "hasbulla_hushet", isAddButtonVisible: false, isNewStory: true)
-
-            
-            ])
-        
+            ]),
+        .post([FeedPostItemInfo(postImage: <#T##UIImage#>, userImage: UIImage(named: ""), userName: <#T##String#>, postSubTitile: <#T##String#>, numberOfLikes: <#T##Int#>, comment: <#T##CommentShortInfo?#>)]
+              
+        )
     ]
     
     
