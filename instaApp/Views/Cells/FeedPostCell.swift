@@ -40,6 +40,9 @@ class FeedPostCell: UITableViewCell {
         static let subtitleFontSize: CGFloat = 11
         static let userNameStackToPrifilieImageOffset: CGFloat = 12
         static let postImageToUserImageOffset: CGFloat = 6
+        static let actionStackHeight: CGFloat = 30
+        static let actionStackToPostImageOffset: CGFloat = 6
+        static let actionStackSpacing: CGFloat = 8
     }
     
     
@@ -77,6 +80,35 @@ class FeedPostCell: UITableViewCell {
         return view
     }()
     
+    private let likesButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .black
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        return button
+    }()
+    
+    private let commentButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .black
+        button.setImage(UIImage(systemName: "bubble.right"), for: .normal)
+        return button
+    }()
+    
+    private let shareButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .black
+        button.setImage(UIImage(systemName: "paperplane"), for: .normal)
+        return button
+    }()
+    
+    private let saveButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .black
+        button.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        return button
+    }()
+    
+    
 }
 // MARK: - Private methods
 private extension FeedPostCell{
@@ -110,5 +142,32 @@ private extension FeedPostCell{
             make.top.equalTo(userImageView.snp.bottom).offset(UIConstants.postImageToUserImageOffset)
             make.height.equalTo(contentView.snp.width)
         }
+        
+        let actionsStack = UIStackView()
+        actionsStack.axis = .horizontal
+        actionsStack.addArrangedSubview(likesButton)
+        actionsStack.addArrangedSubview(commentButton)
+        actionsStack.addArrangedSubview(shareButton)
+        actionsStack.spacing = UIConstants.actionStackSpacing
+        contentView.addSubview(actionsStack)
+        actionsStack.snp.makeConstraints { make in
+            make.height.equalTo(UIConstants.actionStackHeight)
+            make.left.equalToSuperview().inset(UIConstants.contentInset)
+            make.top.equalTo(postImageView.snp.bottom).offset(UIConstants.actionStackToPostImageOffset)
+        }
+        
+        contentView.addSubview(saveButton)
+        saveButton.snp.makeConstraints { make in
+            make.height.equalTo(UIConstants.actionStackHeight)
+            make.right.equalToSuperview().inset(UIConstants.contentInset)
+            make.top.equalTo(postImageView.snp.bottom).offset(UIConstants.actionStackToPostImageOffset)
+        }
+        
+        private let postSubTitile: UILabel = {
+            let label = UILabel()
+            label.font = .systemFont(ofSize: UIConstants.subtitleFontSize)
+
+            return label
+        }()
     }
 }
