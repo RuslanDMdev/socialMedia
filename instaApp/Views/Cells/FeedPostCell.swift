@@ -17,6 +17,10 @@ class FeedPostCell: UITableViewCell {
         userNameLabel.text = info.userName
         postSubTitile.text = info.postSubTitile
         postImageView.image = info.postImage
+        likesLabel.text = "Нравится: " + "\(info.numberOfLikes)"
+        if let comment = info.comment {
+            commentLabel.text = comment.userName + " " + comment.commentText
+        }
     }
     
     
@@ -36,13 +40,22 @@ class FeedPostCell: UITableViewCell {
         static let userImageSize: CGFloat = 30
         static let contentInset: CGFloat = 12
         static let userImageTopInset: CGFloat = 6
-        static let userPostNameFontSize: CGFloat = 14
-        static let subtitleFontSize: CGFloat = 11
         static let userNameStackToPrifilieImageOffset: CGFloat = 12
         static let postImageToUserImageOffset: CGFloat = 6
-        static let actionStackHeight: CGFloat = 30
+        static let actionStackHeight: CGFloat = 24
+        static let actionStackWidth: CGFloat = 96
         static let actionStackToPostImageOffset: CGFloat = 6
         static let actionStackSpacing: CGFloat = 8
+        static let likesToActionStackOffset: CGFloat = 12
+        static let commentToLikeOffset: CGFloat = 10
+        
+        //MARK: - Fonts
+        static let userPostNameFontSize: CGFloat = 14
+        static let subtitleFontSize: CGFloat = 11
+        static let likesLabelFontSize: CGFloat = 14
+        static let commentUserLabelFontSize: CGFloat = 14
+        static let commentTextLabelFontSize: CGFloat = 14
+
     }
     
     
@@ -83,31 +96,44 @@ class FeedPostCell: UITableViewCell {
     private let likesButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .black
-        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.setImage(UIImage(named: "likeheart"), for: .normal)
         return button
     }()
     
     private let commentButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .black
-        button.setImage(UIImage(systemName: "bubble.right"), for: .normal)
+        button.setImage(UIImage(named: "Union"), for: .normal)
         return button
     }()
     
     private let shareButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .black
-        button.setImage(UIImage(systemName: "paperplane"), for: .normal)
+        button.setImage(UIImage(named: "share"), for: .normal)
         return button
     }()
     
     private let saveButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .black
-        button.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        button.setImage(UIImage(named: "bookmark"), for: .normal)
         return button
     }()
     
+    private let likesLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: UIConstants.likesLabelFontSize,  weight: .bold)
+        return label
+    }()
+    
+    
+    private let commentLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: UIConstants.commentUserLabelFontSize,  weight: .bold)
+        return label
+    }()
+
     
 }
 // MARK: - Private methods
@@ -146,11 +172,24 @@ private extension FeedPostCell{
         let actionsStack = UIStackView()
         actionsStack.axis = .horizontal
         actionsStack.addArrangedSubview(likesButton)
+        likesButton.snp.makeConstraints { make in
+                make.height.equalTo(24)
+                make.width.equalTo(24)
+            }
         actionsStack.addArrangedSubview(commentButton)
+        commentButton.snp.makeConstraints { make in
+                make.height.equalTo(24)
+                make.width.equalTo(24)
+            }
         actionsStack.addArrangedSubview(shareButton)
+        shareButton.snp.makeConstraints { make in
+                make.height.equalTo(24)
+                make.width.equalTo(24)
+            }
         actionsStack.spacing = UIConstants.actionStackSpacing
         contentView.addSubview(actionsStack)
         actionsStack.snp.makeConstraints { make in
+            make.width.equalTo(UIConstants.actionStackWidth)
             make.height.equalTo(UIConstants.actionStackHeight)
             make.left.equalToSuperview().inset(UIConstants.contentInset)
             make.top.equalTo(postImageView.snp.bottom).offset(UIConstants.actionStackToPostImageOffset)
@@ -158,16 +197,22 @@ private extension FeedPostCell{
         
         contentView.addSubview(saveButton)
         saveButton.snp.makeConstraints { make in
-            make.height.equalTo(UIConstants.actionStackHeight)
+            make.height.equalTo(24)
+            make.width.equalTo(24)
             make.right.equalToSuperview().inset(UIConstants.contentInset)
             make.top.equalTo(postImageView.snp.bottom).offset(UIConstants.actionStackToPostImageOffset)
         }
         
-        private let postSubTitile: UILabel = {
-            let label = UILabel()
-            label.font = .systemFont(ofSize: UIConstants.subtitleFontSize)
-
-            return label
-        }()
+        contentView.addSubview(likesLabel)
+        likesLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(UIConstants.contentInset)
+            make.top.equalTo(actionsStack.snp.bottom).offset(UIConstants.likesToActionStackOffset)
+        }
+        
+        contentView.addSubview(commentLabel)
+        commentLabel.snp.makeConstraints { make in
+            make.top.equalTo(likesLabel.snp.bottom).offset(UIConstants.commentToLikeOffset)
+            make.leading.equalToSuperview().inset(UIConstants.contentInset)
+        }
     }
 }
