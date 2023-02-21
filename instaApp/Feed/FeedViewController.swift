@@ -23,7 +23,7 @@ class FeedViewController: UIViewController {
     private let tableView = UITableView()
     private var items: [FeedItemType] = [
         .stories([
-            FeedStoriesItemCellInfo(image: UIImage(named: "hasbikmain")!, userName: "hasbulla_hushet", isAddButtonVisible: true, isNewStory: false),
+            FeedStoriesItemCellInfo(image: UIImage(named: "hasbikmain")!, userName: "hasbulla_hushetskiy", isAddButtonVisible: true, isNewStory: false),
             FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "hasbulla_hushet", isAddButtonVisible: false, isNewStory: true),
             FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "hasbulla_hushet", isAddButtonVisible: false, isNewStory: true),
             FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "hasbulla_hushet", isAddButtonVisible: false, isNewStory: false),
@@ -34,12 +34,9 @@ class FeedViewController: UIViewController {
             FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "hasbulla_hushet", isAddButtonVisible: false, isNewStory: true),
             FeedStoriesItemCellInfo(image: UIImage(named: "hasbik")!, userName: "hasbulla_hushet", isAddButtonVisible: false, isNewStory: true)
             ]),
-        .post([FeedPostItemInfo(postImage: <#T##UIImage#>, userImage: UIImage(named: ""), userName: <#T##String#>, postSubTitile: <#T##String#>, numberOfLikes: <#T##Int#>, comment: <#T##CommentShortInfo?#>)]
-              
-        )
+        
+        .post(FeedPostItemInfo(userImage: UIImage(named: "hasbikmain")!, userName: "hasbulla_hushetskiy", postSubTitile: "makhachkala", postImage: UIImage(named: "hasbikPost")!, numberOfLikes: 452, comment: CommentShortInfo(userName: "rdalgatovm", commentText: "А когда не эта жи")))
     ]
-    
-    
 }
 
 
@@ -109,7 +106,8 @@ extension FeedViewController: UITableViewDataSource{
             
             
         case .post(let post):
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FeedPostCell.self), for: indexPath) as! FeedPostCell; cell.configure(with: post)
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FeedPostCell.self), for: indexPath) as! FeedPostCell;
+            cell.configure(with: post)
             return cell
             
         }
