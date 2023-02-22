@@ -23,7 +23,7 @@ class LogoView: UIView{
 // MARK: - Private properties
     private let imageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "Instagram_logo")
+        view.image = UIImage(named: "Ruslangram_logo")
         return view
     }()
 

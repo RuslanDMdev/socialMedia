@@ -19,7 +19,7 @@ class FeedPostCell: UITableViewCell {
         postImageView.image = info.postImage
         likesLabel.text = "Нравится: " + "\(info.numberOfLikes)"
         if let comment = info.comment {
-            commentLabel.text = comment.userName + " " + comment.commentText
+                configureCommentLabel(with: comment)
         }
     }
     
@@ -130,7 +130,7 @@ class FeedPostCell: UITableViewCell {
     
     private let commentLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: UIConstants.commentUserLabelFontSize,  weight: .bold)
+        label.font = .systemFont(ofSize: UIConstants.commentUserLabelFontSize)
         return label
     }()
 
@@ -213,6 +213,15 @@ private extension FeedPostCell{
         commentLabel.snp.makeConstraints { make in
             make.top.equalTo(likesLabel.snp.bottom).offset(UIConstants.commentToLikeOffset)
             make.leading.equalToSuperview().inset(UIConstants.contentInset)
+            make.bottom.equalToSuperview().inset(UIConstants.contentInset)
         }
+    }
+    
+    func configureCommentLabel(with comment: CommentShortInfo){
+        let string = comment.userName + " " + comment.commentText
+        let attributedString = NSMutableAttributedString(string: string)
+        let range = NSRange(location: .zero, length: comment.userName.count)
+        attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: UIConstants.commentUserLabelFontSize), range: range)
+        commentLabel.attributedText = attributedString
     }
 }
