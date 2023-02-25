@@ -45,7 +45,6 @@ class FeedViewController: UIViewController {
     ]
 }
 
-
 // MARK: - Private methods
 
 private extension FeedViewController {

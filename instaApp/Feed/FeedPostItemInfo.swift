@@ -12,7 +12,7 @@ struct FeedPostItemInfo {
     let userName: String
     let postSubTitile: String
     let postImage: UIImage
-    let numberOfLikes: Int
+    var numberOfLikes: Int
     let comment: CommentShortInfo?
 }
 

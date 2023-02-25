@@ -12,7 +12,6 @@ import SnapKit
 class FeedPostCell: UITableViewCell {
     // MARK: - Public
     func configure(with info: FeedPostItemInfo){
-        print(info)
         userImageView.image = info.userImage
         userNameLabel.text = info.userName
         postSubTitile.text = info.postSubTitile
@@ -89,9 +88,14 @@ class FeedPostCell: UITableViewCell {
     }()
     
     private let postImageView: UIImageView = {
-       let view = UIImageView()
+        let view = UIImageView()
+        view.isUserInteractionEnabled = true // enable user interaction for the view
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
+        doubleTap.numberOfTapsRequired = 2 // set number of required taps to 2
+        view.addGestureRecognizer(doubleTap) // add the gesture recognizer to the view
         return view
     }()
+
     
     private let likesButton: UIButton = {
         let button = UIButton(type: .system)
@@ -227,6 +231,19 @@ private extension FeedPostCell{
     }
     
     @objc func likeButtonPressed(){
+        if likesButton.currentImage == UIImage(named: "likeheart") {
+            likesButton.setImage(UIImage(named: "redLikeheart"), for: .normal)
+        }else {
+            likesButton.setImage(UIImage(named: "likeheart"), for: .normal)
+        }
+    }
+//    func plusLike(with info: FeedPostItemInfo){
+//        likesLabel.text = "Нравится: " + "\(info.numberOfLikes + 1) "
+//    }
+//    func minusLike(with info: FeedPostItemInfo){
+//        likesLabel.text = "Нравится: " + "\(info.numberOfLikes - 1) "
+//    }
+    @objc func handleDoubleTap() {
         if likesButton.currentImage == UIImage(named: "likeheart") {
             likesButton.setImage(UIImage(named: "redLikeheart"), for: .normal)
         }else {
