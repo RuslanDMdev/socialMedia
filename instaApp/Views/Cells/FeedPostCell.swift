@@ -96,6 +96,7 @@ class FeedPostCell: UITableViewCell {
     private let likesButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .black
+        button.addTarget(self, action: #selector(likeButtonPressed), for: .touchUpInside)
         button.setImage(UIImage(named: "likeheart"), for: .normal)
         return button
     }()
@@ -223,5 +224,13 @@ private extension FeedPostCell{
         let range = NSRange(location: .zero, length: comment.userName.count)
         attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: UIConstants.commentUserLabelFontSize), range: range)
         commentLabel.attributedText = attributedString
+    }
+    
+    @objc func likeButtonPressed(){
+        if likesButton.currentImage == UIImage(named: "likeheart") {
+            likesButton.setImage(UIImage(named: "redLikeheart"), for: .normal)
+        }else {
+            likesButton.setImage(UIImage(named: "likeheart"), for: .normal)
+        }
     }
 }
