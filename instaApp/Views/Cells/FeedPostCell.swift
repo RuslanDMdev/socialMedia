@@ -94,7 +94,7 @@ class FeedPostCell: UITableViewCell {
 
     private let buttonImage: UIButton = {
         let button = UIButton(type: .system)
-        button.addTarget(self, action: #selector(likeButtonPressed), for: .touchDownRepeat)
+        button.addTarget(self, action: #selector(handleDoubleTap), for: .touchDownRepeat)
         return button
     }()
     
@@ -254,10 +254,26 @@ private extension FeedPostCell{
             saveButton.setImage(UIImage(named: "bookmark"), for: .normal)
         }
     }
-//    func plusLike(with info: FeedPostItemInfo){
-//        likesLabel.text = "Нравится: " + "\(info.numberOfLikes + 1) "
-//    }
-//    func minusLike(with info: FeedPostItemInfo){
-//        likesLabel.text = "Нравится: " + "\(info.numberOfLikes - 1) "
-//    }
+    
+    @objc func handleDoubleTap(_ gestureRecognizer: UITapGestureRecognizer) {
+        if likesButton.currentImage == UIImage(named: "likeheart") {
+            likesButton.setImage(UIImage(named: "redLikeheart"), for: .normal)
+            
+        let heartImageView = UIImageView(image: UIImage(named: "whiteLikeHeart"))
+        heartImageView.contentMode = .scaleAspectFit
+        heartImageView.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
+        heartImageView.center = contentView.center
+        contentView.addSubview(heartImageView)
+
+        UIView.animate(withDuration: 0.9, delay: 0, options: [.curveEaseOut], animations: {
+            heartImageView.transform = CGAffineTransform(scaleX: 1.5 , y: 1.5)
+            heartImageView.alpha = 0
+        }, completion: { _ in
+            heartImageView.removeFromSuperview()
+        })
+        }else {
+            likesButton.setImage(UIImage(named: "likeheart"), for: .normal)
+        }
+    }
+
 }
