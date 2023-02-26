@@ -89,13 +89,15 @@ class FeedPostCell: UITableViewCell {
     
     private let postImageView: UIImageView = {
         let view = UIImageView()
-        view.isUserInteractionEnabled = true // enable user interaction for the view
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
-        doubleTap.numberOfTapsRequired = 2 // set number of required taps to 2
-        view.addGestureRecognizer(doubleTap) // add the gesture recognizer to the view
         return view
     }()
 
+    private let buttonImage: UIButton = {
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(likeButtonPressed), for: .touchDownRepeat)
+        return button
+    }()
+    
     
     private let likesButton: UIButton = {
         let button = UIButton(type: .system)
@@ -122,6 +124,7 @@ class FeedPostCell: UITableViewCell {
     private let saveButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor = .black
+        button.addTarget(self, action: #selector(savePostButtonPressed), for: .touchUpInside)
         button.setImage(UIImage(named: "bookmark"), for: .normal)
         return button
     }()
@@ -169,6 +172,12 @@ private extension FeedPostCell{
         
         contentView.addSubview(postImageView)
         postImageView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(userImageView.snp.bottom).offset(UIConstants.postImageToUserImageOffset)
+            make.height.equalTo(contentView.snp.width)
+        }
+        contentView.addSubview(buttonImage)
+        buttonImage.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(userImageView.snp.bottom).offset(UIConstants.postImageToUserImageOffset)
             make.height.equalTo(contentView.snp.width)
@@ -237,17 +246,18 @@ private extension FeedPostCell{
             likesButton.setImage(UIImage(named: "likeheart"), for: .normal)
         }
     }
+    
+    @objc func savePostButtonPressed(){
+        if saveButton.currentImage == UIImage(named: "bookmark") {
+            saveButton.setImage(UIImage(named: "blackbookmark"), for: .normal)
+        }else {
+            saveButton.setImage(UIImage(named: "bookmark"), for: .normal)
+        }
+    }
 //    func plusLike(with info: FeedPostItemInfo){
 //        likesLabel.text = "Нравится: " + "\(info.numberOfLikes + 1) "
 //    }
 //    func minusLike(with info: FeedPostItemInfo){
 //        likesLabel.text = "Нравится: " + "\(info.numberOfLikes - 1) "
 //    }
-    @objc func handleDoubleTap() {
-        if likesButton.currentImage == UIImage(named: "likeheart") {
-            likesButton.setImage(UIImage(named: "redLikeheart"), for: .normal)
-        }else {
-            likesButton.setImage(UIImage(named: "likeheart"), for: .normal)
-        }
-    }
 }
