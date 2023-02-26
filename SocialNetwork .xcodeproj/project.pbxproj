@@ -55,15 +55,15 @@
 		0C6BBC3C2982DB7F005153F3 /* FeedPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostCell.swift; sourceTree = "<group>"; };
 		0C6BBC3E29882DDE005153F3 /* ReelsViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReelsViewController .swift"; sourceTree = "<group>"; };
 		0C6BBC40299F5617005153F3 /* StoriesItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesItemCell.swift; sourceTree = "<group>"; };
-		0CE29CAE297404EE005D7047 /* instaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CE29CAE297404EE005D7047 /* SocialNetwork .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SocialNetwork .app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE29CB1297404EE005D7047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CE29CB3297404EE005D7047 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0CE29CBA297404F0005D7047 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CE29CBD297404F0005D7047 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CE29CBF297404F0005D7047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0CE29CC4297404F0005D7047 /* instaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CE29CC4297404F0005D7047 /* SocialNetwork Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SocialNetwork Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE29CC8297404F0005D7047 /* instaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instaAppTests.swift; sourceTree = "<group>"; };
-		0CE29CCE297404F0005D7047 /* instaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = instaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CE29CCE297404F0005D7047 /* SocialNetwork UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SocialNetwork UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE29CD2297404F0005D7047 /* instaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instaAppUITests.swift; sourceTree = "<group>"; };
 		0CE29CD4297404F0005D7047 /* instaAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = instaAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		106AADA060F6D926C4AF3FDB /* Pods_instaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,9 +170,9 @@
 		0CE29CAF297404EE005D7047 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0CE29CAE297404EE005D7047 /* instaApp.app */,
-				0CE29CC4297404F0005D7047 /* instaAppTests.xctest */,
-				0CE29CCE297404F0005D7047 /* instaAppUITests.xctest */,
+				0CE29CAE297404EE005D7047 /* SocialNetwork .app */,
+				0CE29CC4297404F0005D7047 /* SocialNetwork Tests.xctest */,
+				0CE29CCE297404F0005D7047 /* SocialNetwork UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,9 +231,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0CE29CAD297404EE005D7047 /* instaApp */ = {
+		0CE29CAD297404EE005D7047 /* SocialNetwork  */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0CE29CD8297404F0005D7047 /* Build configuration list for PBXNativeTarget "instaApp" */;
+			buildConfigurationList = 0CE29CD8297404F0005D7047 /* Build configuration list for PBXNativeTarget "SocialNetwork " */;
 			buildPhases = (
 				03BFA835AF7B70FC4235F4BF /* [CP] Check Pods Manifest.lock */,
 				0CE29CAA297404EE005D7047 /* Sources */,
@@ -245,14 +245,14 @@
 			);
 			dependencies = (
 			);
-			name = instaApp;
+			name = "SocialNetwork ";
 			productName = instaApp;
-			productReference = 0CE29CAE297404EE005D7047 /* instaApp.app */;
+			productReference = 0CE29CAE297404EE005D7047 /* SocialNetwork .app */;
 			productType = "com.apple.product-type.application";
 		};
-		0CE29CC3297404F0005D7047 /* instaAppTests */ = {
+		0CE29CC3297404F0005D7047 /* SocialNetwork Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0CE29CDB297404F0005D7047 /* Build configuration list for PBXNativeTarget "instaAppTests" */;
+			buildConfigurationList = 0CE29CDB297404F0005D7047 /* Build configuration list for PBXNativeTarget "SocialNetwork Tests" */;
 			buildPhases = (
 				DD1E883968A64BFEE204E80F /* [CP] Check Pods Manifest.lock */,
 				0CE29CC0297404F0005D7047 /* Sources */,
@@ -264,14 +264,14 @@
 			dependencies = (
 				0CE29CC6297404F0005D7047 /* PBXTargetDependency */,
 			);
-			name = instaAppTests;
+			name = "SocialNetwork Tests";
 			productName = instaAppTests;
-			productReference = 0CE29CC4297404F0005D7047 /* instaAppTests.xctest */;
+			productReference = 0CE29CC4297404F0005D7047 /* SocialNetwork Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0CE29CCD297404F0005D7047 /* instaAppUITests */ = {
+		0CE29CCD297404F0005D7047 /* SocialNetwork UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0CE29CDE297404F0005D7047 /* Build configuration list for PBXNativeTarget "instaAppUITests" */;
+			buildConfigurationList = 0CE29CDE297404F0005D7047 /* Build configuration list for PBXNativeTarget "SocialNetwork UITests" */;
 			buildPhases = (
 				DEBA5178FE2212A943CA8DA2 /* [CP] Check Pods Manifest.lock */,
 				0CE29CCA297404F0005D7047 /* Sources */,
@@ -284,9 +284,9 @@
 			dependencies = (
 				0CE29CD0297404F0005D7047 /* PBXTargetDependency */,
 			);
-			name = instaAppUITests;
+			name = "SocialNetwork UITests";
 			productName = instaAppUITests;
-			productReference = 0CE29CCE297404F0005D7047 /* instaAppUITests.xctest */;
+			productReference = 0CE29CCE297404F0005D7047 /* SocialNetwork UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -312,7 +312,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0CE29CA9297404EE005D7047 /* Build configuration list for PBXProject "instaApp" */;
+			buildConfigurationList = 0CE29CA9297404EE005D7047 /* Build configuration list for PBXProject "SocialNetwork " */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -325,9 +325,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0CE29CAD297404EE005D7047 /* instaApp */,
-				0CE29CC3297404F0005D7047 /* instaAppTests */,
-				0CE29CCD297404F0005D7047 /* instaAppUITests */,
+				0CE29CAD297404EE005D7047 /* SocialNetwork  */,
+				0CE29CC3297404F0005D7047 /* SocialNetwork Tests */,
+				0CE29CCD297404F0005D7047 /* SocialNetwork UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -502,12 +502,12 @@
 /* Begin PBXTargetDependency section */
 		0CE29CC6297404F0005D7047 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0CE29CAD297404EE005D7047 /* instaApp */;
+			target = 0CE29CAD297404EE005D7047 /* SocialNetwork  */;
 			targetProxy = 0CE29CC5297404F0005D7047 /* PBXContainerItemProxy */;
 		};
 		0CE29CD0297404F0005D7047 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0CE29CAD297404EE005D7047 /* instaApp */;
+			target = 0CE29CAD297404EE005D7047 /* SocialNetwork  */;
 			targetProxy = 0CE29CCF297404F0005D7047 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -652,8 +652,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -681,8 +680,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -713,7 +711,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/instaApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/instaApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialNetwork .app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SocialNetwork ";
 			};
 			name = Debug;
 		};
@@ -734,7 +732,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/instaApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/instaApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialNetwork .app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SocialNetwork ";
 			};
 			name = Release;
 		};
@@ -779,7 +777,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0CE29CA9297404EE005D7047 /* Build configuration list for PBXProject "instaApp" */ = {
+		0CE29CA9297404EE005D7047 /* Build configuration list for PBXProject "SocialNetwork " */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0CE29CD6297404F0005D7047 /* Debug */,
@@ -788,7 +786,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0CE29CD8297404F0005D7047 /* Build configuration list for PBXNativeTarget "instaApp" */ = {
+		0CE29CD8297404F0005D7047 /* Build configuration list for PBXNativeTarget "SocialNetwork " */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0CE29CD9297404F0005D7047 /* Debug */,
@@ -797,7 +795,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0CE29CDB297404F0005D7047 /* Build configuration list for PBXNativeTarget "instaAppTests" */ = {
+		0CE29CDB297404F0005D7047 /* Build configuration list for PBXNativeTarget "SocialNetwork Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0CE29CDC297404F0005D7047 /* Debug */,
@@ -806,7 +804,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0CE29CDE297404F0005D7047 /* Build configuration list for PBXNativeTarget "instaAppUITests" */ = {
+		0CE29CDE297404F0005D7047 /* Build configuration list for PBXNativeTarget "SocialNetwork UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0CE29CDF297404F0005D7047 /* Debug */,
