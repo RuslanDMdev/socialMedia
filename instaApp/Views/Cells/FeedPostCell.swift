@@ -242,6 +242,9 @@ private extension FeedPostCell{
     @objc func likeButtonPressed(){
         if likesButton.currentImage == UIImage(named: "likeheart") {
             likesButton.setImage(UIImage(named: "redLikeheart"), for: .normal)
+            
+            let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+                feedbackGenerator.impactOccurred(intensity: 1)
         }else {
             likesButton.setImage(UIImage(named: "likeheart"), for: .normal)
         }
@@ -250,6 +253,9 @@ private extension FeedPostCell{
     @objc func savePostButtonPressed(){
         if saveButton.currentImage == UIImage(named: "bookmark") {
             saveButton.setImage(UIImage(named: "blackbookmark"), for: .normal)
+            
+            let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+                feedbackGenerator.impactOccurred(intensity: 1)
         }else {
             saveButton.setImage(UIImage(named: "bookmark"), for: .normal)
         }
@@ -260,10 +266,14 @@ private extension FeedPostCell{
             likesButton.setImage(UIImage(named: "redLikeheart"), for: .normal)
             
         let heartImageView = UIImageView(image: UIImage(named: "whiteLikeHeart"))
-        heartImageView.contentMode = .scaleAspectFit
-        heartImageView.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
-        heartImageView.center = contentView.center
         contentView.addSubview(heartImageView)
+            heartImageView.snp.makeConstraints { make in
+                make.width.equalTo(80)
+                make.height.equalTo(70)
+                make.centerX.equalTo(buttonImage)
+                make.centerY.equalTo(buttonImage)
+                
+            }
 
         UIView.animate(withDuration: 0.9, delay: 0, options: [.curveEaseOut], animations: {
             heartImageView.transform = CGAffineTransform(scaleX: 1.5 , y: 1.5)
@@ -271,9 +281,12 @@ private extension FeedPostCell{
         }, completion: { _ in
             heartImageView.removeFromSuperview()
         })
+            let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+                feedbackGenerator.impactOccurred(intensity: 1)
         }else {
             likesButton.setImage(UIImage(named: "likeheart"), for: .normal)
+            let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+                feedbackGenerator.impactOccurred(intensity: 1)
         }
     }
-
 }
