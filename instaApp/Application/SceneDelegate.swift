@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        let viewController = FeedViewController()
+        let viewController = MainTabBarController()
         let navigationController = UINavigationController(rootViewController: viewController)
         window.rootViewController = navigationController
         self.window = window

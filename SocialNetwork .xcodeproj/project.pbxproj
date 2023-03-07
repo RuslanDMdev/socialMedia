@@ -14,8 +14,11 @@
 		0C6BBC382982D476005153F3 /* FeedPostItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC372982D476005153F3 /* FeedPostItemInfo.swift */; };
 		0C6BBC3B2982DAF6005153F3 /* FeedStoriesSetSell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC3A2982DAF6005153F3 /* FeedStoriesSetSell.swift */; };
 		0C6BBC3D2982DB7F005153F3 /* FeedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC3C2982DB7F005153F3 /* FeedPostCell.swift */; };
-		0C6BBC3F29882DDE005153F3 /* ReelsViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC3E29882DDE005153F3 /* ReelsViewController .swift */; };
 		0C6BBC41299F5617005153F3 /* StoriesItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC40299F5617005153F3 /* StoriesItemCell.swift */; };
+		0C6BBC4429B72C3B005153F3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC4329B72C3B005153F3 /* MainTabBarController.swift */; };
+		0C6BBC4629B72DBB005153F3 /* RealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC4529B72DBB005153F3 /* RealsViewController.swift */; };
+		0C6BBC4929B72E94005153F3 /* RecomendedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC4829B72E94005153F3 /* RecomendedViewController.swift */; };
+		0C6BBC4C29B72EE0005153F3 /* LikesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6BBC4B29B72EE0005153F3 /* LikesScreenViewController.swift */; };
 		0CE29CB2297404EE005D7047 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE29CB1297404EE005D7047 /* AppDelegate.swift */; };
 		0CE29CB4297404EE005D7047 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE29CB3297404EE005D7047 /* SceneDelegate.swift */; };
 		0CE29CBB297404F0005D7047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE29CBA297404F0005D7047 /* Assets.xcassets */; };
@@ -53,8 +56,11 @@
 		0C6BBC372982D476005153F3 /* FeedPostItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostItemInfo.swift; sourceTree = "<group>"; };
 		0C6BBC3A2982DAF6005153F3 /* FeedStoriesSetSell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoriesSetSell.swift; sourceTree = "<group>"; };
 		0C6BBC3C2982DB7F005153F3 /* FeedPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostCell.swift; sourceTree = "<group>"; };
-		0C6BBC3E29882DDE005153F3 /* ReelsViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReelsViewController .swift"; sourceTree = "<group>"; };
 		0C6BBC40299F5617005153F3 /* StoriesItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesItemCell.swift; sourceTree = "<group>"; };
+		0C6BBC4329B72C3B005153F3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		0C6BBC4529B72DBB005153F3 /* RealsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealsViewController.swift; sourceTree = "<group>"; };
+		0C6BBC4829B72E94005153F3 /* RecomendedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendedViewController.swift; sourceTree = "<group>"; };
+		0C6BBC4B29B72EE0005153F3 /* LikesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesScreenViewController.swift; sourceTree = "<group>"; };
 		0CE29CAE297404EE005D7047 /* SocialNetwork .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SocialNetwork .app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE29CB1297404EE005D7047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CE29CB3297404EE005D7047 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 			children = (
 				0CE29CB1297404EE005D7047 /* AppDelegate.swift */,
 				0CE29CB3297404EE005D7047 /* SceneDelegate.swift */,
+				0C6BBC4329B72C3B005153F3 /* MainTabBarController.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -128,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				0C6BBC2E2977EF30005153F3 /* FeedViewController.swift */,
-				0C6BBC3E29882DDE005153F3 /* ReelsViewController .swift */,
 				0C6BBC332982D307005153F3 /* FeedItemType.swift */,
 				0C6BBC352982D35C005153F3 /* FeedStoriesCellInfo.swift */,
 				0C6BBC372982D476005153F3 /* FeedPostItemInfo.swift */,
@@ -153,6 +159,30 @@
 				0C6BBC40299F5617005153F3 /* StoriesItemCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		0C6BBC4229B72BA2005153F3 /* Reals */ = {
+			isa = PBXGroup;
+			children = (
+				0C6BBC4529B72DBB005153F3 /* RealsViewController.swift */,
+			);
+			path = Reals;
+			sourceTree = "<group>";
+		};
+		0C6BBC4729B72E68005153F3 /* Recomended */ = {
+			isa = PBXGroup;
+			children = (
+				0C6BBC4829B72E94005153F3 /* RecomendedViewController.swift */,
+			);
+			path = Recomended;
+			sourceTree = "<group>";
+		};
+		0C6BBC4A29B72EBE005153F3 /* LikesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0C6BBC4B29B72EE0005153F3 /* LikesScreenViewController.swift */,
+			);
+			path = LikesScreen;
 			sourceTree = "<group>";
 		};
 		0CE29CA5297404EE005D7047 = {
@@ -182,6 +212,9 @@
 			children = (
 				0C6BBC2B2977EE03005153F3 /* Application */,
 				0C6BBC2D2977EEEC005153F3 /* Feed */,
+				0C6BBC4729B72E68005153F3 /* Recomended */,
+				0C6BBC4229B72BA2005153F3 /* Reals */,
+				0C6BBC4A29B72EBE005153F3 /* LikesScreen */,
 				0C6BBC30298015DA005153F3 /* Views */,
 				0C6BBC2C2977EE09005153F3 /* Resources */,
 			);
@@ -468,13 +501,16 @@
 			files = (
 				0C6BBC382982D476005153F3 /* FeedPostItemInfo.swift in Sources */,
 				0CE29CB2297404EE005D7047 /* AppDelegate.swift in Sources */,
+				0C6BBC4429B72C3B005153F3 /* MainTabBarController.swift in Sources */,
 				0C6BBC3229801602005153F3 /* LogoView.swift in Sources */,
 				0C6BBC2F2977EF30005153F3 /* FeedViewController.swift in Sources */,
 				0C6BBC3B2982DAF6005153F3 /* FeedStoriesSetSell.swift in Sources */,
+				0C6BBC4629B72DBB005153F3 /* RealsViewController.swift in Sources */,
 				0CE29CB4297404EE005D7047 /* SceneDelegate.swift in Sources */,
+				0C6BBC4929B72E94005153F3 /* RecomendedViewController.swift in Sources */,
 				0C6BBC3D2982DB7F005153F3 /* FeedPostCell.swift in Sources */,
-				0C6BBC3F29882DDE005153F3 /* ReelsViewController .swift in Sources */,
 				0C6BBC342982D307005153F3 /* FeedItemType.swift in Sources */,
+				0C6BBC4C29B72EE0005153F3 /* LikesScreenViewController.swift in Sources */,
 				0C6BBC41299F5617005153F3 /* StoriesItemCell.swift in Sources */,
 				0C6BBC362982D35C005153F3 /* FeedStoriesCellInfo.swift in Sources */,
 			);
