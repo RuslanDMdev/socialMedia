@@ -1,5 +1,5 @@
 //
-//  RecomendedViewController.swift
+//  ActivityViewController.swift
 //  SocialNetwork 
 //
 //  Created by Ruslan Dalgatov on 07.03.2023.
@@ -7,13 +7,12 @@
 
 import UIKit
 
-class RecomendedViewController: UIViewController {
+class ActivityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .brown
     }
     
-
 
 }
