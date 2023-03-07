@@ -45,20 +45,20 @@ class MainTabBarController: UITabBarController {
         
         let likeheartIcon = UIImage(named: "likeheart")
         let resizedActivity = likeheartIcon?.resize(to: CGSize(width: 24, height: 24))
-        
         let likeheartIconFill = UIImage(named: "likeheartFill")
         let resizedActivityFill = likeheartIconFill?.resize(to: CGSize(width: 24, height: 24))
         
-        let profileIcon = UIImage(named: "Story ring")
-        let resizedProfile = profileIcon?.resize(to: CGSize(width: 24, height: 24))
-        let resizedProfileFill = profileIcon?.resize(to: CGSize(width: 24, height: 24))
+        let homeTabBarAvatar = UIImage(named: "homeTabBarAvatar")
+        let resizedhomeTabBarAvatar = homeTabBarAvatar?.resize(to: CGSize(width: 24, height: 24))
+        let homeTabBarAvatarFill = UIImage(named: "homeTabBarAvatarFill")
+        let resizedhomeTabBarAvatarFill = homeTabBarAvatarFill?.resize(to: CGSize(width: 24, height: 24))
 
         
         homeVC.tabBarItem = UITabBarItem(title: "", image: resizedHouse, selectedImage: resizedHouseFill)
         searchVC.tabBarItem = UITabBarItem(title: "", image: resizedSearch, selectedImage: resizedSearchFill)
         addPostVC.tabBarItem = UITabBarItem(title: "", image: resizedReals, selectedImage: resizedRealsFill)
         activityVC.tabBarItem = UITabBarItem(title: "", image: resizedActivity, selectedImage: resizedActivityFill)
-        profileVC.tabBarItem = UITabBarItem(title: "", image: resizedProfile, selectedImage: resizedProfileFill)
+        profileVC.tabBarItem = UITabBarItem(title: "", image: resizedhomeTabBarAvatar, selectedImage: resizedhomeTabBarAvatarFill)
         
         self.viewControllers = [homeVC, searchVC, addPostVC, activityVC, profileVC]
         
