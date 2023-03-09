@@ -9,11 +9,22 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .green
+    // MARK: - Private properties
+
+        
+    //MARK: - View lifecycle
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            initialize()
+        }
+
     }
-    
+    // MARK: - Private methods
 
-
-}
+    private extension SearchViewController {
+        func initialize(){
+            view.backgroundColor = .white
+            navigationItem.title = "Search"
+            navigationController?.navigationBar.tintColor = .black
+        }
+    }

@@ -63,27 +63,27 @@ private extension FeedViewController {
         }
     }
     
-    func makeRightBarButtonItems() -> [UIBarButtonItem]{
+    private func makeRightBarButtonItems() -> [UIBarButtonItem]{
         let addBarButtunItem = UIBarButtonItem(title: "nil", image: UIImage(systemName: "plus"), target: self, action: #selector(didTapPlusButton))
         let directBarButtunItem = UIBarButtonItem(title: "nil", image: UIImage(systemName: "paperplane"), target: self, action: #selector(didTapDirectButton))
         return[directBarButtunItem, addBarButtunItem]
     }
-    
+
     @objc func didTapPlusButton(){
         print("Add button tapped")
     }
-    
+
     @objc func didTapDirectButton(){
         print("Direct button tapped")
     }
-    
-    func makeLeftBarButtonItems() -> [UIBarButtonItem] {
+
+    private func makeLeftBarButtonItems() -> [UIBarButtonItem] {
         let logoBarButtunItem = UIBarButtonItem(customView: LogoView())
         let dropDownButtomItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "chevron.down"), target: self, action: nil, menu: makeDrowDownMenu())
     return [logoBarButtunItem, dropDownButtomItem]
     }
-    
-    func makeDrowDownMenu() -> UIMenu{
+
+    private func makeDrowDownMenu() -> UIMenu{
         let subItem = UIAction(title: "Подписки", image: UIImage(systemName: "person.2")) { _ in
             print("Subs")
         }

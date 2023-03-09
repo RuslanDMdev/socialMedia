@@ -8,11 +8,27 @@
 import UIKit
 
 class ActivityViewController: UIViewController {
+    
+// MARK: - Private properties
 
+    
+//MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brown
+        initialize()
+    }
+
+}
+// MARK: - Private methods
+
+private extension ActivityViewController {
+    func initialize(){
+        view.backgroundColor = .white
+        navigationItem.leftBarButtonItems = makeLeftBarButtonItems()
     }
     
-
+    private func makeLeftBarButtonItems() -> [UIBarButtonItem] {
+        let titleBarButtunItem = UIBarButtonItem(customView: NotificationLabel())
+        return [titleBarButtunItem]
+    }
 }

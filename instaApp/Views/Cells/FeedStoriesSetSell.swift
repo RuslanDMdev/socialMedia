@@ -41,7 +41,7 @@ class FeedStoriesSetSell: UITableViewCell {
     
 }
 
-//MARK: - Private methods
+//MARK: - Private methods 
 
 private extension FeedStoriesSetSell{
     func initialize(){

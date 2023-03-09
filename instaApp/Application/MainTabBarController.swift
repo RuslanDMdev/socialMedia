@@ -11,25 +11,32 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tabBar.tintColor = .black
         self.tabBar.itemPositioning = .centered
         self.tabBar.barTintColor = .white
         self.tabBar.isTranslucent = false
         self.tabBar.tintColor = .tabBarItemAccent
         self.tabBar.unselectedItemTintColor = .tabBarItemLight
-        
-        
+
         // MARK: - VC properties
         let homeVC = FeedViewController()
-        let searchVC = SearchViewController()
-        let addPostVC = RealsViewController()
+        let searchVC =  SearchViewController()
+        let addPostVC = ReelsViewController()
         let activityVC = ActivityViewController()
-        let profileVC = ActivityViewController()
+        let profileVC = ProfileViewController()
         
+        let homeNavigationController = UINavigationController(rootViewController: homeVC)
+        let searchNavigationController = UINavigationController(rootViewController: searchVC)
+        let addPostNavigationController = UINavigationController(rootViewController: addPostVC)
+        let activityNavigationController = UINavigationController(rootViewController: activityVC)
+        let profileNavigationController = UINavigationController(rootViewController: profileVC)
+
+        self.viewControllers = [homeNavigationController, searchNavigationController, addPostNavigationController, activityNavigationController, profileNavigationController]
+
         
         // MARK: - Resizing images
-        let houseIcon = UIImage(named: "house12")
+        
+
+        let houseIcon = UIImage(named: "house")?.withRenderingMode(.alwaysOriginal)
         let resizedHouse = houseIcon?.resize(to: CGSize(width: 24, height: 24))
         let houseIconFill = UIImage(named: "houseFill")
         let resizedHouseFill = houseIconFill?.resize(to: CGSize(width: 24, height: 24))
@@ -44,13 +51,13 @@ class MainTabBarController: UITabBarController {
         let resizedRealsFill = realsIcon?.resize(to: CGSize(width: 24, height: 24))
         
         let likeheartIcon = UIImage(named: "likeheart")
-        let resizedActivity = likeheartIcon?.resize(to: CGSize(width: 24, height: 24))
+        let resizedActivity = likeheartIcon?.resize(to: CGSize(width: 22, height: 21))
         let likeheartIconFill = UIImage(named: "likeheartFill")
-        let resizedActivityFill = likeheartIconFill?.resize(to: CGSize(width: 24, height: 24))
+        let resizedActivityFill = likeheartIconFill?.resize(to: CGSize(width: 22, height: 21))
         
-        let homeTabBarAvatar = UIImage(named: "homeTabBarAvatar")
+        let homeTabBarAvatar = UIImage(named: "Story ring")
         let resizedhomeTabBarAvatar = homeTabBarAvatar?.resize(to: CGSize(width: 24, height: 24))
-        let homeTabBarAvatarFill = UIImage(named: "homeTabBarAvatarFill")
+        let homeTabBarAvatarFill = UIImage(named: "avatar")
         let resizedhomeTabBarAvatarFill = homeTabBarAvatarFill?.resize(to: CGSize(width: 24, height: 24))
 
         
@@ -59,12 +66,14 @@ class MainTabBarController: UITabBarController {
         addPostVC.tabBarItem = UITabBarItem(title: "", image: resizedReals, selectedImage: resizedRealsFill)
         activityVC.tabBarItem = UITabBarItem(title: "", image: resizedActivity, selectedImage: resizedActivityFill)
         profileVC.tabBarItem = UITabBarItem(title: "", image: resizedhomeTabBarAvatar, selectedImage: resizedhomeTabBarAvatarFill)
-        
-        self.viewControllers = [homeVC, searchVC, addPostVC, activityVC, profileVC]
-        
 
-
+        
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
 }
 
 // MARK: - Private extensions
