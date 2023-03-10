@@ -7,10 +7,11 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UISearchBarDelegate {
 
     // MARK: - Private properties
 
+    private let searchBar = UISearchBar()
         
     //MARK: - View lifecycle
         override func viewDidLoad() {
@@ -18,13 +19,34 @@ class SearchViewController: UIViewController {
             initialize()
         }
 
+    // MARK: - UISearchBarDelegate
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // Handle search button click
+        if let searchText = searchBar.text {
+            // Perform search with searchText
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // Handle text changes in search bar
+        // You could use this to update search results in real-time
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        // Handle cancel button click
+        searchBar.resignFirstResponder()
+    }
+    
     }
     // MARK: - Private methods
 
     private extension SearchViewController {
         func initialize(){
             view.backgroundColor = .white
-            navigationItem.title = "Search"
-            navigationController?.navigationBar.tintColor = .black
+            searchBar.placeholder = "Поиск"
+            searchBar.delegate = self
+            navigationItem.titleView = searchBar
+
         }
     }

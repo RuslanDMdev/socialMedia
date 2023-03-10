@@ -119,8 +119,6 @@ private extension ProfileViewController {
         navigationItem.rightBarButtonItems = makeRightBarButtonItems()
         
         userImageView.image = UIImage(named: "hasbik")
-        changeAvatar()
-        changeAvatar()
         userImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(100)
             make.left.equalToSuperview().inset(20)

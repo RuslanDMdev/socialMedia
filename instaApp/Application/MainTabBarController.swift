@@ -16,7 +16,8 @@ class MainTabBarController: UITabBarController {
         self.tabBar.isTranslucent = false
         self.tabBar.tintColor = .tabBarItemAccent
         self.tabBar.unselectedItemTintColor = .tabBarItemLight
-
+        
+        
         // MARK: - VC properties
         let homeVC = FeedViewController()
         let searchVC =  SearchViewController()
@@ -73,7 +74,6 @@ class MainTabBarController: UITabBarController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
-
 }
 
 // MARK: - Private extensions

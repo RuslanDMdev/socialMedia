@@ -71,6 +71,8 @@
 		0C909F1629B8CFE10084A1A1 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		0C909F1B29B90D790084A1A1 /* FolowersViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolowersViewLabel.swift; sourceTree = "<group>"; };
 		0C909F1F29B910120084A1A1 /* ProfileLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLabel.swift; sourceTree = "<group>"; };
+		0C909F2129B9EA5F0084A1A1 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
+		0C909F2229B9EA7C0084A1A1 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
 		0CE29CAE297404EE005D7047 /* SocialNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE29CB1297404EE005D7047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CE29CB3297404EE005D7047 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -238,6 +240,8 @@
 		0CE29CB0297404EE005D7047 /* instaApp */ = {
 			isa = PBXGroup;
 			children = (
+				0C909F2129B9EA5F0084A1A1 /* video1.mp4 */,
+				0C909F2229B9EA7C0084A1A1 /* video2.mp4 */,
 				0C6BBC2B2977EE03005153F3 /* Application */,
 				0C6BBC2D2977EEEC005153F3 /* Feed */,
 				0C6BBC4729B72E68005153F3 /* Search */,
